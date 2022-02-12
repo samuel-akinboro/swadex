@@ -3,17 +3,17 @@ import euthereumIcon from "../../assets/images/euthereum.svg";
 import closeIcon from "../../assets/images/close.svg";
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 
-const SelectToken = () => {
+const SelectToken = ({setShowSelectToken, setShowImportToken}) => {
   return (
     <div className="w-screen h-screen absolute inset-0 bg-[#50505099] flex items-center justify-center">
       <div className="py-6 px-4 bg-[#D9D9DA] w-11/12 max-w-[364px] rounded-md">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-md text-[#090A0B] font-semibold">Select a token</h3>
-          <img src={closeIcon} alt="" className="cursor-pointer" />
+          <img src={closeIcon} alt="" className="cursor-pointer" onClick={()=> setShowSelectToken(false)} />
         </div>
         <input type="text" placeholder="Search name or paste address" className="w-full p-3 mb-2 rounded-md outline-0 text-sm"/>
         <div>
-          <div className="cursor-pointer p-2 mt-2 rounded-md bg-white flex items-center justify-between">
+          <div className="cursor-pointer p-2 mt-2 rounded-md bg-white flex items-center justify-between" onClick={()=> setShowSelectToken(false)}>
             <div className="flex gap-2 items-center">
               <img src={euthereumIcon} alt="" />
               <div>
@@ -58,7 +58,7 @@ const SelectToken = () => {
               </div>
             </div>
             <div>
-              <button className="bg-black px-6 py-1 rounded-md text-[#F5FA80] text-sm my-2">import</button>
+              <button className="bg-black px-6 py-1 rounded-md text-[#F5FA80] text-sm my-2" onClick={()=>{setShowImportToken(true); setShowSelectToken(false)}}>import</button>
             </div>
           </div>
         </div>

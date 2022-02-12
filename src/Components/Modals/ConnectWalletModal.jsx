@@ -7,15 +7,15 @@ import coinbaseIcon from "../../assets/images/crypto-1.svg";
 import formaticIcon from "../../assets/images/crypto-2.svg";
 import portisIcon from "../../assets/images/crypto-3.svg";
 
-function ConnectWalletModal() {
+function ConnectWalletModal({setShowConnectWallet}) {
   const navigate = useNavigate();
 
   return (
     <div className="w-screen h-screen absolute inset-0 bg-[#50505099] flex items-center justify-center">
-      <div className="p-4 bg-[#F8F8F9B2] w-11/12 max-w-[464px]">
+      <div className="p-4 bg-[#F8F8F9B2] w-11/12 max-w-[364px]">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-lg text-[#090A0B]">Connect to a wallet</h3>
-          <img src={closeIcon} alt="" className="cursor-pointer" />
+          <img src={closeIcon} alt="" className="cursor-pointer" onClick={()=> setShowConnectWallet(false)} />
         </div>
         <div>
           <div className="cursor-pointer p-2 rounded-md border-[1px] border-black bg-white flex items-center justify-between" onClick={()=> navigate("/login/cryptooly")}>

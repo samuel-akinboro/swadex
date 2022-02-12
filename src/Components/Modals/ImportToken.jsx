@@ -4,16 +4,16 @@ import closeIcon from "../../assets/images/close.svg";
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import ReportProblemOutlinedIcon from "@mui/icons-material/ReportProblemOutlined";
 
-const ImportToken = () => {
+const ImportToken = ({setShowSelectToken, setShowImportToken, setShowManageList}) => {
   return (
     <div className="w-screen h-screen absolute inset-0 bg-[#50505099] flex items-center justify-center">
       <div className="py-6 px-4 bg-[#D9D9DA] w-11/12 max-w-[364px] rounded-md">
         <div className="flex items-center justify-between mb-3">
           <h3 className="text-md text-[#090A0B] font-semibold flex items-center gap-2">
-            <ArrowBackOutlinedIcon fontSize="small" className="cursor-pointer" />
+            <ArrowBackOutlinedIcon fontSize="small" className="cursor-pointer" onClick={()=>{setShowImportToken(false); setShowSelectToken(true)}} />
             Import token
           </h3>
-          <img src={closeIcon} alt="" className="cursor-pointer" />
+          <img src={closeIcon} alt="" className="cursor-pointer" onClick={()=>{setShowImportToken(false); setShowSelectToken(false)}} />
         </div>
         <div>
           <div className="cursor-pointer p-2 mt-2 rounded-md bg-white flex items-center justify-between">
@@ -48,7 +48,7 @@ const ImportToken = () => {
           </div>
         </div>
         <div className="py-2 w-full pt-4">
-          <button className="bg-black font-semibold w-full text-[#F5FA80] py-4 px-6 rounded-md">
+          <button className="bg-black font-semibold w-full text-[#F5FA80] py-4 px-6 rounded-md" onClick={()=>{setShowImportToken(false); setShowManageList(true)}}>
             Import
           </button>
         </div>

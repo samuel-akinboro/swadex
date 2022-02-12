@@ -3,12 +3,13 @@ import accountOneAvatar from "../assets/images/account1.svg";
 import accountTwoAvatar from "../assets/images/account2.svg";
 import accountThreeAvatar from "../assets/images/account3.svg";
 import CheckIcon from "@mui/icons-material/Check";
-import { pink, grey } from '@mui/material/colors';
-import Checkbox from '@mui/material/Checkbox';
+import { useNavigate } from "react-router-dom";
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 const SelectAccount = () => {
+  const navigate = useNavigate();
+  
   return (
     <div className="w-full h-screen flex items-center justify-center">
       <div className="w-11/12 max-w-[586px] text-center">
@@ -59,7 +60,7 @@ const SelectAccount = () => {
           </label>
           <div className="mt-6">
             <button className="w-1/2 p-4 rounded-md font-semibold">Cancel</button>
-            <button className="w-1/2 p-4 rounded-md bg-[#000000] text-[#F5FA80]">Connect</button>
+            <button className="w-1/2 p-4 rounded-md bg-[#000000] text-[#F5FA80]" onClick={()=> navigate("/")}>Connect</button>
           </div>
         </div>
       </div>

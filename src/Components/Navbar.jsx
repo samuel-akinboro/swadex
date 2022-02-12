@@ -1,6 +1,6 @@
 import {NavLink} from 'react-router-dom'
 
-function Navbar() {
+function Navbar({setShowConnectWallet}) {
   return (
     <div className="bg-[#F8F8F9]">
       <div className="container h-[80px] mx-auto px-12 flex items-center">
@@ -12,7 +12,12 @@ function Navbar() {
         </div>
         <div className="flex items-center space-x-4">
           <span className="h-[40px] bg-[#D7E4E3] w-[74px] flex items-center justify-center rounded-md font-medium">0 SAP</span>
-          <button className="bg-black h-[40px] px-8 text-[#F5FA80] rounded-md">Connect to Wallet</button>
+          <button 
+            className="bg-black h-[40px] px-8 text-[#F5FA80] rounded-md"
+            onClick={()=> setShowConnectWallet(true)}
+          >
+            Connect to Wallet
+          </button>
         </div>
       </div>
     </div>
